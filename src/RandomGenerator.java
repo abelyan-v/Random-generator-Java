@@ -14,20 +14,22 @@ public class RandomGenerator {
 	JTextArea text;
 	ArrayList<JCheckBox> list_checkBox;
 	JTextField lengthText;
+	JTextField numberOfWordsTextField;
 	
-	public RandomGenerator(JTextArea text, ArrayList<JCheckBox> list_checkBox, JTextField lengthText) {
+	public RandomGenerator(JTextArea text, ArrayList<JCheckBox> list_checkBox, JTextField lengthText, JTextField numberOfWordsTextField) {
 		this.text = text;
 		this.list_checkBox = list_checkBox;
 		this.lengthText = lengthText;
+		this.numberOfWordsTextField = numberOfWordsTextField;  
 	}
 	
 	void debug() {
 
-		int min = 0;  
+		int min = 0;
 		int max = this.chars_input.length() - 1;
 		int b;
 		
-		for (int i = 0; i < 16; i++) {
+		for (int i = 0; i < Integer.parseInt(this.numberOfWordsTextField.getText()); i++) {
 			for (int j = 0; j < Integer.parseInt(this.lengthText.getText()); j++) {
 				b = (int)(Math.random()*(max-min+1)+min);
 				System.out.println(b);

@@ -15,11 +15,12 @@ public class CharsCaretListener implements CaretListener {
 	@Override
 	public void caretUpdate(CaretEvent e) {
 		try {
-			this.lengthSlider.setValue(Integer.parseInt(this.lengthTextField.getText()));
+			String wordsLengthString = this.lengthTextField.getText();
+			int wordsLengthInteger = Integer.parseInt(wordsLengthString);
+			this.lengthSlider.setValue(wordsLengthInteger);
 		}
 		catch (NumberFormatException e1) {
-			this.lengthTextField.setText("0");
+			
 		}
 	}
-
 }
